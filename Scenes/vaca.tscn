@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c1pu8sadelk4v"]
+
+[ext_resource type="Script" uid="uid://01f1kuyr4wxe" path="res://Scripts/vaca.gd" id="1_2tncy"]
+[ext_resource type="Texture2D" uid="uid://s2wjnixk7nrn" path="res://Assets/03_Animales/vaca_01.png" id="2_bid8m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8w0r3"]
+radius = 28.00469
+height = 75.9651
+
+[node name="vaca" type="CharacterBody2D" unique_id=85142294]
+script = ExtResource("1_2tncy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985343748]
+position = Vector2(2.0000002, 4)
+rotation = 1.5404917
+shape = SubResource("CapsuleShape2D_8w0r3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=687736713]
+texture = ExtResource("2_bid8m")

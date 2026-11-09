@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://1v2cnsdmkyp3"]
+
+[ext_resource type="Script" uid="uid://bbpex11lgqh1b" path="res://Scripts/granjero.gd" id="1_be7nv"]
+[ext_resource type="Texture2D" uid="uid://cljqt4l4owia4" path="res://Assets/04_Personaje_y_NPCs/granjero_frente_01.png" id="2_p4tmq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m8ue3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p4tmq")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7yvof"]
+radius = 19.0
+height = 84.0
+
+[node name="Granjero" type="CharacterBody2D" unique_id=574373657]
+script = ExtResource("1_be7nv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=794871956]
+position = Vector2(33, 45)
+sprite_frames = SubResource("SpriteFrames_m8ue3")
+animation = &"new_animation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1492068334]
+position = Vector2(35, 49)
+shape = SubResource("CapsuleShape2D_7yvof")

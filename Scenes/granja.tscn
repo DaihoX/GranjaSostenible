@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bgo6m388rr5ru"]
+
+[ext_resource type="Texture2D" uid="uid://cl0grxrvrkr52" path="res://Assets/01_Terreno_y_caminos/Terreno_Completo.png" id="1_m8ue3"]
+[ext_resource type="PackedScene" uid="uid://1v2cnsdmkyp3" path="res://Scenes/granjero.tscn" id="2_7yvof"]
+[ext_resource type="Script" uid="uid://dgpqutcn001th" path="res://Scripts/potrero.gd" id="3_wvfol"]
+[ext_resource type="PackedScene" uid="uid://c1pu8sadelk4v" path="res://Scenes/vaca.tscn" id="4_1io5j"]
+[ext_resource type="PackedScene" uid="uid://bh7w63wunbkod" path="res://Scenes/control.tscn" id="5_jy861"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m8ue3"]
+texture = ExtResource("1_m8ue3")
+margins = Vector2i(35, 20)
+separation = Vector2i(69, 51)
+texture_region_size = Vector2i(230, 250)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1io5j"]
+sources/0 = SubResource("TileSetAtlasSource_m8ue3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w0r3"]
+size = Vector2(116, 119)
+
+[node name="Granja" type="Node2D" unique_id=182484210]
+
+[node name="TileMap" type="TileMap" parent="." unique_id=285931572]
+tile_set = SubResource("TileSet_1io5j")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(458758, 65536, 0, 458772, 65536, 0, 458786, 0, 0, 458798, 196608, 0, 458812, 196608, 0, 1441798, 131072, 0, 1441812, 131072, 0, 1441826, 131072, 0, 1441840, 131072, 0, 1441854, 131072, 0, 2424838, 0, 0, 2424852, 65536, 0, 2424866, 65536, 0, 2424880, 65536, 0, 2424894, 65536, 0, 458826, 65536, 0, 2424908, 65536, 0, 1441868, 131072, 0)
+
+[node name="Granjero" parent="TileMap" unique_id=574373657 instance=ExtResource("2_7yvof")]
+
+[node name="Potrero" type="Area2D" parent="." unique_id=1687877572]
+position = Vector2(13, 182)
+script = ExtResource("3_wvfol")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Potrero" unique_id=452335328]
+position = Vector2(540, -120)
+shape = SubResource("RectangleShape2D_8w0r3")
+
+[node name="vaca" parent="." unique_id=85142294 instance=ExtResource("4_1io5j")]
+position = Vector2(541, 345)
+
+[node name="InterfazUI" parent="." unique_id=58633458 instance=ExtResource("5_jy861")]
