@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Granja_Bovina_Sostenible"
+run/main_scene="uid://bgo6m388rr5ru"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
